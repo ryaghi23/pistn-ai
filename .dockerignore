@@ -1,0 +1,21 @@
+# Ignore large files during Docker build
+lmdb-pages.sqsh
+lmdb-images/
+*.sqsh
+*.mdb
+
+# Ignore system files
+.git/
+.gitignore
+*.md
+DEPLOYMENT.md
+LOCAL_HOSTING_GUIDE.md
+EXTERNAL_SSD_SETUP.md
+I_DRIVE_SETUP.md
+HOSTING_COMPARISON.md
+VPSDIME_SETUP.md
+
+# Ignore temporary files
+node_modules/
+*.log
+*.tmp

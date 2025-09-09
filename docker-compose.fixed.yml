@@ -1,0 +1,15 @@
+services:
+  operation-charm:
+    build:
+      context: .
+      dockerfile: Dockerfile.fixed
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      # Mount the squashfs file and images directory
+      - ./lmdb-pages.sqsh:/app/lmdb-pages.sqsh:ro
+      - ./lmdb-images:/app/lmdb-images:ro
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

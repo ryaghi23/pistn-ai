@@ -1,0 +1,13 @@
+services:
+  operation-charm:
+    build: .
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      # Mount the large files from host instead of copying into container
+      - ./lmdb-pages.sqsh:/data/lmdb-pages.sqsh:ro
+      - ./lmdb-images:/data/lmdb-images:ro
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
